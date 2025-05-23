@@ -184,10 +184,8 @@ public with sharing class FlowControlLoopsCollections {
          
          for (Integer i = 1; i <= intLimit; i++) {
             sum +=i;
-            
-            return sum;
          }
-    
+            return sum;
     }
 
     /**
@@ -197,11 +195,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return The string "Hello World!; Hello World!; Hello World!; "
      */
     public static String returnHelloWorld() {
-        String result = ''   // Initialize the result String
+        String result = '';   // Initialize the result String
 
         // Use a for loop to append 'Hello World!;' to the result string three times
         
          for (Integer i = 0; i < 3; i++) {
+
             result += 'Hello World!; ';
          }
 
