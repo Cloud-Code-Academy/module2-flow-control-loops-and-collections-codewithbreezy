@@ -64,7 +64,7 @@ public with sharing class FlowControlLoopsCollections {
         // Initialize largestNum as null
         Integer largestNum = null;
         // Check to see if both numbrtd are null
-        if (num1 == null && num2 == null) {
+        if (num1 == null || num2 == null) {
             return null;
         }
         if (num1 > num2) {
@@ -430,19 +430,21 @@ public with sharing class FlowControlLoopsCollections {
         Map<String, Integer> employeeSalaries = new Map<String, Integer>();
 
         // Add key-value pairs to the Map
-        // add John Doe => 50000
-        // add Jane Smith => 60000
-        // add Sam Brown => 55000
-        // add Alice Johnson => 65000
+        employeeSalaries.put('John Doe', 50000);// add John Doe => 50000
+        employeeSalaries.put ('Jane Smith', 60000);// add Jane Smith => 60000
+        employeeSalaries.put('Sam Brown', 55000); // add Sam Brown => 55000
+        employeeSalaries.put('Alice Johnson', 65000);// add Alice Johnson => 65000
 
-        // Initialize a list to store the names of high paid employees
+        List <String> highPaidEmployees = new List <String> (); // Initialize a list to store the names of high paid employees
 
         // Iterate over the Map using a for loop
-            // Check if the salary of the employee is more than 55000
-                // Add the employee to the list of high paid employees
 
-        // Return the list of high paid employees
-        return null; // Replace null with the variable you used to store the result
-    }
+        for (String employeeName : employeeSalaries.keySet()) {
+            Integer salary = employeeSalaries.get(employeeName);
+            if (salary > 55000) {
+                highPaidEmployees.add(employeeName);
+            }
+                 }
 
-}
+           return highPaidEmployees;
+         }    }
